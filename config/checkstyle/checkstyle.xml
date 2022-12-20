@@ -101,7 +101,7 @@
         <module name="JavadocType"/>
         <module name="JavadocStyle"/>
         <module name="MissingJavadocType">
-             <property name="severity" value="warning"/>
+            <property name="severity" value="warning"/>
         </module>
 
         <!-- Checks for Naming Conventions.                  -->
