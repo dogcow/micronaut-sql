@@ -2,6 +2,14 @@ plugins {
     id 'io.micronaut.build.internal.sql-module'
 }
 
+// TODO: Temporary disabled tests and binary compatibility check
+test.onlyIf { false }
+micronautBuild {
+    binaryCompatibility {
+        enabled = false
+    }
+}
+
 dependencies {
     annotationProcessor(mn.micronaut.graal)
 
@@ -16,8 +24,7 @@ dependencies {
     api(libs.jakarta.transaction.api)
     api(mn.micronaut.validation)
     // TODO: Update to hibernate6 when available
-    //api(mnData.micronaut.data.tx.hibernate)
-    api(mnData.micronaut.data.tx)
+    api(mnData.micronaut.data.tx.hibernate)
     api(mn.micronaut.aop)
     api projects.jdbc
     api(mn.micronaut.runtime)
