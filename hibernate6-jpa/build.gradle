@@ -21,10 +21,15 @@ dependencies {
         exclude group:'org.javassist', module:'javassist'
         exclude group:'org.jboss:jandex', module:'jar'
     }
+    api (projects.hibernateJpa) {
+        exclude group: 'org.hibernate'
+    }
     api(libs.jakarta.transaction.api)
     api(mn.micronaut.validation)
     // TODO: Update to hibernate6 when available
-    api(mnData.micronaut.data.tx.hibernate)
+    api(mnData.micronaut.data.tx.hibernate) {
+        exclude group: 'org.hibernate'
+    }
     api(mn.micronaut.aop)
     api projects.jdbc
     api(mn.micronaut.runtime)
