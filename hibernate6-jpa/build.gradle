@@ -21,7 +21,7 @@ dependencies {
         exclude group:'org.javassist', module:'javassist'
         exclude group:'org.jboss:jandex', module:'jar'
     }
-    api (projects.hibernateJpa) {
+    api(projects.hibernateJpa) {
         exclude group: 'org.hibernate'
     }
     api(libs.jakarta.transaction.api)
